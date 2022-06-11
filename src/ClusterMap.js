@@ -5,6 +5,7 @@ import MarkerClusterGroup from "react-leaflet-markercluster-v2";
 import "leaflet/dist/leaflet.css";
 import { coordinates } from "./data/clusterData";
 import PopupDetails from "./PopupDetails";
+import TooltipDetails from "./TooltipDetails";
 
 const customIcon = new L.Icon({
   iconUrl: require("./location.svg").default,
@@ -38,6 +39,9 @@ const ClusterMap = () => {
               <Popup>
                 <PopupDetails lat={d[0]} lng={d[1]} />
               </Popup>
+              <Tooltip>
+                <TooltipDetails />
+              </Tooltip>
             </Marker>
           ))}
         </MarkerClusterGroup>
