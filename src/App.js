@@ -1,10 +1,12 @@
 import "./App.css";
-import Markers from "./Markers";
+import ClusterMap from "./ClusterMap";
+//import Markers from "./Markers";
 
 function App() {
   return (
     <div className="App">
-      <Markers />
+      {/* <Markers /> */}
+      <ClusterMap />
     </div>
   );
 }
