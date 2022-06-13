@@ -1,12 +1,14 @@
 import "./App.css";
-import ClusterMap from "./ClusterMap";
+import DraggableMarker from "./DraggableMarker";
+//import ClusterMap from "./ClusterMap";
 //import Markers from "./Markers";
 
 function App() {
   return (
     <div className="App">
       {/* <Markers /> */}
-      <ClusterMap />
+      {/* <ClusterMap /> */}
+      <DraggableMarker />
     </div>
   );
 }
