@@ -1,5 +1,6 @@
 import "./App.css";
 import Countries from "./Countries";
+import HeatmapIndia from "./HeatmapIndia";
 //import DraggableMarker from "./DraggableMarker";
 //import HeatmapUSA from "./HeatmapUSA";
 //import ClusterMap from "./ClusterMap";
@@ -12,7 +13,8 @@ function App() {
       {/* <ClusterMap /> */}
       {/* <DraggableMarker /> */}
       {/* <HeatmapUSA /> */}
-      <Countries />
+      <HeatmapIndia />
+      {/* <Countries /> */}
     </div>
   );
 }
