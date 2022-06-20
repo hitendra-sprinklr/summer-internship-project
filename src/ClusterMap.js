@@ -35,7 +35,11 @@ const ClusterMap = () => {
           showCoverageOnHover={true}
         >
           {coordinates.map((d) => (
-            <Marker position={d} icon={customIcon}>
+            <Marker
+              position={d}
+              icon={customIcon}
+              key={Math.random().toString()}
+            >
               <Popup>
                 <PopupDetails lat={d[0]} lng={d[1]} />
               </Popup>
