@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
 import india from "./data/india.json";
+import usa from "./data/usa.json";
 
 const HeatmapIndia = () => {
   const countryStyle = {
@@ -37,6 +38,7 @@ const HeatmapIndia = () => {
 
   return (
     <div className="country">
+      <h1>Heatmap</h1>
       <MapContainer center={[20, 100]} zoom={2} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -45,6 +47,11 @@ const HeatmapIndia = () => {
         <GeoJSON
           style={countryStyle}
           data={india.features}
+          onEachFeature={onEachCountry}
+        />
+        <GeoJSON
+          style={countryStyle}
+          data={usa.features}
           onEachFeature={onEachCountry}
         />
       </MapContainer>

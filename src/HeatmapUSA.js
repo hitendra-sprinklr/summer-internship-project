@@ -9,7 +9,7 @@ const HeatmapUSA = () => {
   };
 
   const onEachCountry = (country, layer) => {
-    const countryName = country.properties.NAME;
+    const countryName = country.properties.Name;
     console.log(countryName);
     layer.bindPopup(countryName);
     // layer.bindTooltip("hey there");

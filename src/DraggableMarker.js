@@ -23,7 +23,7 @@ const DraggableMarker = () => {
   );
 
   return (
-    <div className="container">
+    <div className="draggable-marker">
       <MapContainer center={[51.505, -0.09]} zoom={4} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

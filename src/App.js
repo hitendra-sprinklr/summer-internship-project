@@ -1,5 +1,5 @@
 import "./App.css";
-import Countries from "./Countries";
+//import Countries from "./Countries";
 import HeatmapIndia from "./HeatmapIndia";
 //import DraggableMarker from "./DraggableMarker";
 //import HeatmapUSA from "./HeatmapUSA";
@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       {/* <Markers /> */}
       <ClusterMap />
-      {/* <DraggableMarker /> */}
       {/* <HeatmapUSA /> */}
-      {/* <HeatmapIndia /> */}
+      <HeatmapIndia />
+      {/* <DraggableMarker /> */}
       {/* <Countries /> */}
     </div>
   );
