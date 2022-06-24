@@ -11,7 +11,7 @@ const HeatmapIndia = () => {
 
   const onEachCountry = (country, layer) => {
     const countryName = country.properties.Name;
-    console.log(countryName);
+    //console.log(countryName);
     layer.bindPopup(countryName);
     // layer.bindTooltip("hey there");
 

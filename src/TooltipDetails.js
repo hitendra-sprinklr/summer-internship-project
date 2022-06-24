@@ -1,11 +1,11 @@
-const TooltipDetails = () => {
+const TooltipDetails = ({ insights, mentions, stars }) => {
   return (
     <div className="tooltip">
-      <h3>Tooltip</h3>
+      <h2>Tooltip</h2>
       <hr />
-      <div className="insights">Insights : 100</div>
-      <div className="mentions">Mentions : 80</div>
-      <div className="stars">Stars : 60</div>
+      <div className="insights">Insights : {insights}</div>
+      <div className="mentions">Mentions : {mentions}</div>
+      <div className="stars">Stars : {stars}</div>
     </div>
   );
 };
