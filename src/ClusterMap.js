@@ -7,6 +7,7 @@ import markersData from "./data/randomClusterData";
 import PopupDetails from "./PopupDetails";
 import TooltipDetails from "./TooltipDetails";
 import ClusterDetails from "./ClusterDetails";
+import CurrentViewMarkers from "./CurrentViewMarkers";
 
 // For adding a custom icon to the markers
 const customIcon = new L.Icon({
@@ -69,7 +70,6 @@ const ClusterMap = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
         <MarkerClusterGroup
           // onClick={(e) => console.log("onClick", e.layer.getAllChildMarkers())}
           maxClusterRadius={150}
@@ -102,6 +102,9 @@ const ClusterMap = () => {
             </Marker>
           ))}
         </MarkerClusterGroup>
+
+        {/* Component which displays the list of markers in current view/zoom level whenever zoom level changes(zoom in/zoom out) */}
+        <CurrentViewMarkers markersData={markersData} />
       </MapContainer>
     </div>
   );
