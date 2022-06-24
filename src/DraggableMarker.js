@@ -9,6 +9,7 @@ const DraggableMarker = () => {
   const [position, setPosition] = useState(center);
   const markerRef = useRef(null);
 
+  // Eventlistener which is fired when the drag of a marker ends and sets the position
   const eventHandlers = useMemo(
     () => ({
       dragend() {

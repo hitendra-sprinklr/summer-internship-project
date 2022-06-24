@@ -3,17 +3,18 @@ import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
 import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster-v2";
 import "leaflet/dist/leaflet.css";
-//import { coordinates } from "./data/staticClusterData";
 import markersData from "./data/randomClusterData";
 import PopupDetails from "./PopupDetails";
 import TooltipDetails from "./TooltipDetails";
 import ClusterDetails from "./ClusterDetails";
 
+// For adding a custom icon to the markers
 const customIcon = new L.Icon({
   iconUrl: require("./location.svg").default,
   iconSize: new L.Point(40, 47),
 });
 
+// Custom iconcreatefunction for the customising the clustered marker
 const createClusterCustomIcon = function (cluster) {
   const childMarkers = cluster.getAllChildMarkers();
   const childCount = cluster.getChildCount();
@@ -22,6 +23,8 @@ const createClusterCustomIcon = function (cluster) {
   if (childCount < 50) clusterStyle = "small";
   else if (childCount >= 50 && childCount <= 100) clusterStyle = "medium";
   else clusterStyle = "large";
+
+  // Calculating the data for the cluster by iterating over the children (markers) inside the cluster
 
   let clusterInsights = 0,
     clusterMentions = 0,
@@ -32,6 +35,7 @@ const createClusterCustomIcon = function (cluster) {
     clusterStars += parseInt(childMarkers[i].options.customData.stars);
   }
 
+  // Attached a tooltip over the cluster which opens on hovering
   cluster.bindTooltip(
     ClusterDetails({
       insights: clusterInsights,
@@ -41,6 +45,7 @@ const createClusterCustomIcon = function (cluster) {
     })
   );
 
+  // Returning the customised cluster icon
   return L.divIcon({
     html: `<span>${childCount}</span>`,
     className: "cluster" + clusterStyle,
@@ -59,6 +64,7 @@ const ClusterMap = () => {
         maxZoom={6}
         scrollWheelZoom={true}
       >
+        {/* Base layer which displays over the MapContainer */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -78,12 +84,14 @@ const ClusterMap = () => {
               key={marker.id}
               customData={marker}
             >
+              {/* Popup which opens on click over a marker */}
               <Popup>
                 <PopupDetails
                   lat={marker.position[0]}
                   lng={marker.position[1]}
                 />
               </Popup>
+              {/* Tooltip which opens on hovering over a marker */}
               <Tooltip>
                 <TooltipDetails
                   insights={marker.insights}

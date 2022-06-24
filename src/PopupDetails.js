@@ -1,3 +1,5 @@
+// Displays the lat and lng over the marker on clicking
+
 const PopupDetails = (props) => {
   return (
     <div className="coordinates">

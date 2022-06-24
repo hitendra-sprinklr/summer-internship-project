@@ -1,3 +1,5 @@
+// Tested the react-leaflet library features by displaying the map and markers along with other items for learning purpose
+
 import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
 import { features } from "./data/featuresData";
 

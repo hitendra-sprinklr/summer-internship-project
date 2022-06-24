@@ -1,3 +1,5 @@
+// Return a tooltip for the marker for the custom data
+
 const TooltipDetails = ({ insights, mentions, stars }) => {
   return (
     <div className="tooltip">

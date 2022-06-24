@@ -1,6 +1,7 @@
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-
 import "leaflet/dist/leaflet.css";
+
+// Importing geojson data
 import india from "./data/india.json";
 import usa from "./data/usa.json";
 import russia from "./data/russia.json";
@@ -12,16 +13,17 @@ const Heatmap = () => {
     fillColor: "red",
   };
 
+  // Function for adding styles and eventlisteners to each region of heatmap where country is the region object from geojson data and layer is that particular layer which is added to the map
   const onEachCountry = (country, layer) => {
     const countryprops = country.properties;
 
-    layer.bindPopup(HeatmapPopup({ data: countryprops }));
-    // layer.bindTooltip("hey there");
+    layer.bindPopup(HeatmapPopup({ data: countryprops })); // Binds a popup over each region which opens on click
 
-    layer.options.fillOpacity = Math.random();
+    layer.options.fillOpacity = Math.random(); // Fill the opacity of region with random value between 0-1
 
     layer.on({
       click: (event) => {
+        // Makes the bonundaries of a region bold on click
         event.target.setStyle({
           color: "black",
         });
@@ -47,6 +49,9 @@ const Heatmap = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        {/* Adding Geojson data over the map container */}
+
         <GeoJSON
           style={countryStyle}
           data={india.features}
