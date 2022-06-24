@@ -16,6 +16,12 @@ const customIcon = new L.Icon({
 
 const createClusterCustomIcon = function (cluster) {
   const childMarkers = cluster.getAllChildMarkers();
+  const childCount = cluster.getChildCount();
+
+  let clusterStyle;
+  if (childCount < 50) clusterStyle = "small";
+  else if (childCount >= 50 && childCount <= 100) clusterStyle = "medium";
+  else clusterStyle = "large";
 
   let clusterInsights = 0,
     clusterMentions = 0,
@@ -31,13 +37,13 @@ const createClusterCustomIcon = function (cluster) {
       insights: clusterInsights,
       mentions: clusterMentions,
       stars: clusterStars,
-      child: cluster.getChildCount(),
+      child: childCount,
     })
   );
 
   return L.divIcon({
-    html: `<span>${cluster.getChildCount()}</span>`,
-    className: "mycluster",
+    html: `<span>${childCount}</span>`,
+    className: "cluster" + clusterStyle,
     iconSize: L.point(33, 33, true),
   });
 };
@@ -49,7 +55,7 @@ const ClusterMap = () => {
       <MapContainer
         style={{ height: "80vh" }}
         center={[51.505, -0.09]}
-        zoom={4}
+        zoom={3}
         maxZoom={6}
         scrollWheelZoom={true}
       >
