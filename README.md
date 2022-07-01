@@ -1,3 +1,3 @@
 # Deployed App link
 
-https://clustermap-heatmap-react-leaflet.netlify.app/
+https://hitendra-sprinklr.github.io/summer-internship-project/
