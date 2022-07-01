@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/summer-internship-project/static/css/main.4377d8b4.css",
-    "main.js": "/summer-internship-project/static/js/main.3c03bdbd.js",
+    "main.css": "/summer-internship-project/static/css/main.f1e1f3ba.css",
+    "main.js": "/summer-internship-project/static/js/main.20aa72ae.js",
     "static/media/location.svg": "/summer-internship-project/static/media/location.b4fba1755c35778020d3f3f6fa975ad5.svg",
     "index.html": "/summer-internship-project/index.html",
-    "main.4377d8b4.css.map": "/summer-internship-project/static/css/main.4377d8b4.css.map",
-    "main.3c03bdbd.js.map": "/summer-internship-project/static/js/main.3c03bdbd.js.map"
+    "main.f1e1f3ba.css.map": "/summer-internship-project/static/css/main.f1e1f3ba.css.map",
+    "main.20aa72ae.js.map": "/summer-internship-project/static/js/main.20aa72ae.js.map"
   },
   "entrypoints": [
-    "static/css/main.4377d8b4.css",
-    "static/js/main.3c03bdbd.js"
+    "static/css/main.f1e1f3ba.css",
+    "static/js/main.20aa72ae.js"
   ]
 }
